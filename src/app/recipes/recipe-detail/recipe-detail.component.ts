@@ -21,11 +21,12 @@ export class RecipeDetailComponent implements OnInit {
     });
   }
 
-  onAddIngredientsToShoppingList(): void {
-    this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
-  }
+  onAddIngredientsToShoppingList(): void { this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients); }
 
-  onEditRecipe(): void {
-    this.router.navigate(["edit"], { relativeTo: this.route });
+  onEditRecipe(): void { this.router.navigate(["edit"], { relativeTo: this.route }); }
+
+  onDeleteRecipe(): void {
+    this.recipeService.deleteRecipe(this.id);
+    this.router.navigate(["../"]);
   }
 }
